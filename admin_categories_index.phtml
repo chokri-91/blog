@@ -1,0 +1,67 @@
+<main class="d-flex flex-column">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">Administration</li>
+        <li class="breadcrumb-item active" aria-current="page">Gestion des catégories</li>
+    </ol>
+  </nav>
+  <div class="flex-grow-1 d-md-flex align-items-stretch">
+    <?php include 'admin_menu.php'; ?>
+    <section class="col-md-8 p-5 mx-auto">
+      <header class="jumbotron text-center">
+        <h2 class="text-center mb-4 display-4">Gestion des catégories</h2>
+        <p class="lead">Connaître le nombre d'articles par catégorie</p>
+        <hr class="my-4">
+        <a class="btn btn-dark" href="https://sql.sh/fonctions/agregation/count" target="_blank"><i class="fa fa-external-link-alt" aria-hidden="true"></i>SQL COUNT</a>
+        <a class="btn btn-dark" href="https://sql.sh/cours/group-by" target="_blank"><i class="fa fa-external-link-alt" aria-hidden="true"></i>SQL GROUP BY</a>
+        <a class="btn btn-dark" href="https://sql.sh/cours/jointures/left-join" target="_blank"><i class="fa fa-external-link-alt" aria-hidden="true"></i>SQL LEFT JOIN</a>
+        <a class="btn btn-dark" href="https://sql.sh/cours/jointures/right-join" target="_blank"><i class="fa fa-external-link-alt" aria-hidden="true"></i>SQL RIGHT JOIN</a>
+      </header>
+      <nav class="mb-4">
+        <a class="btn btn-primary" href="#">
+          <i class="fas fa-plus" aria-hidden="true"></i>
+          Ajouter une catégorie
+        </a>
+      </nav>
+      <table class="table table-striped">
+        <caption>Liste des catégories</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Catégorie</th>
+            <th>Nombre d'articles</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ( $categories as $category ): ?>
+          <tr>
+            <td><?= intval( $category['Id'] ) ?></td>
+            <td><?= htmlspecialchars( $category['Name'] ) ?></td>
+            <td><?= intval( $category['Total'] ) ?></td>
+            <td>
+              <a
+                class="btn btn-warning"
+                title="Modifier"
+                href="#">
+                <i class="fa fa-pen-nib" aria-hidden="true"></i>
+              </a>
+            </td>
+            <td>
+              <?php if( $category['Total'] <= 0 ) : ?>
+              <a
+                href="#"
+                class="btn btn-danger"
+                title="Supprimer">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+              <?php endif; ?>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</main>

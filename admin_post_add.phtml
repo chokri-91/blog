@@ -1,0 +1,32 @@
+    <section id="gestion">
+    <?php include 'admin_menu.php'?>
+          <div id="edit">
+              
+            <h2>Mise à jour d'un article</h2><br><br>
+
+            <form method="POST">
+                <label>Catégorie de l'article</label>
+                <select name="category">
+                  <?php foreach($categories as $categorie):?>
+                    <option value="<?=$categorie['Id']?>"><?=$categorie['Name']?></option>
+                  <?php endforeach;?>
+                </select>
+
+                <label>Auteur</label>
+
+                <select name="author">                 
+                  <?php foreach($auteurs as $auteur):?>
+                    <option value="<?=$auteur['Id']?>"><?=$auteur['FirstName']?> <?=$auteur['LastName']?></option>
+                  <?php endforeach;?>
+                </select> <br><br>
+
+                <label>Titre</label>
+                <input type="text" name="title"><br><br><br>
+                <label>Texte de l'article</label>
+                <textarea cols="30" rows="4" name="content"></textarea><br><br><br>
+
+                <button type="submit"> Enregistrer</button>
+            </form>
+
+          </div>
+    </section>

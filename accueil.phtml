@@ -1,0 +1,35 @@
+
+<section id="accueil">
+    <header id="head">
+        <h1>Accueil du Blog</h1>
+        <p>Les derniers articles postées</p>
+    
+    </header>
+        
+    <main>
+        <h2>Les nouvelles de Tante URSULE</h2>
+        <?php foreach ($articles as $article):?>
+
+        <article class="articles">
+            <header>
+                <h3><a href="show-post-details.php?id=<?= $article['Id'] ?>"><?= $article['Title'] ?> </a>  </h3>
+                <p>Dans la catégoie : <strong><?=$article['Name']?></strong></p>
+            </header>
+
+            <main>
+                <p><?= htmlspecialchars(substr($article['Contents'],0,50))?>[..]</p>
+                <div><a href="show-post-details.php?id=<?= $article['Id'] ?>">Lire la suite</a></div>
+
+            </main>
+
+            <footer>
+                <p>Rédigé par <strong><?= $article['LastName'] . ' '. $article['FirstName'] ?></strong> le <span><?=$article['date']?></span></p>
+
+            </footer>
+
+        </article>
+        
+        <?php endforeach;?>
+    </main>
+</section>
+

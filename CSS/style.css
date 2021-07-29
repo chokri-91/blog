@@ -1,0 +1,278 @@
+#navbar{
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar p{
+    color: #9099a0;
+    padding-right: 3%;
+}
+#navbar h4{
+    color: white;
+    padding-left: 3%;
+}
+#navbar p a{
+    text-decoration: none;
+    color: #9099a0;
+}
+
+footer
+{
+	text-align: center;
+	margin-top: 10%;
+	font-size: 1em;
+	
+    padding: 0% 30%;
+    background-color: #343a40;
+    color: #9099a0;
+}
+footer img
+{
+	width: 10%;
+    margin-top: 5%;
+}
+
+#academy{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/********************* page accueil ********************/
+
+#accueil #head{
+    background-image: url("../images/fond.jpg");
+}
+
+#accueil h1, #accueil p{
+    padding-left: 5%;
+    margin: 0%;
+    padding-top: 1%;
+}
+
+#accueil h1{
+    padding-top: 4%;
+}
+
+#accueil p{
+    padding-bottom: 4%;
+}
+
+#accueil h2{
+    text-align: center;
+    margin-top: 3%;
+}
+
+#accueil .articles{
+    display: inline-block;
+    width: 25%;
+    margin-left: 2%;
+    margin-top: 5%;
+}
+
+#accueil .articles header{
+    background-color: #ffc107;
+    padding: 2%;
+    
+}
+
+#accueil .articles header p{
+    padding-bottom: 10%;
+}
+
+#accueil .articles footer{
+    padding: 2%;
+}
+
+#accueil .articles a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-right: 1%;
+    text-align: center;
+}
+
+/********************* page details ********************/
+#details{
+    display: flex;
+    justify-content: space-between;
+}
+#details #article_show{
+    width: 55%;
+    
+    margin-top: 0%;
+}
+
+#details #comments{
+    width: 43%;
+    background-color: #6c757d;
+    
+}
+
+#article_show header{
+    background-image: url(../images/fond.jpg);
+    background-size: cover;
+}
+
+
+#article_show header div{
+   padding: 5%;
+}
+
+#article_show header div hr{
+    opacity: 0.5;
+}
+
+#article_show header h3{
+    margin-top: 3%;
+}
+
+#article_show main{
+    width: 90%;
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 3%;
+}
+
+#comments h3{
+    color: white;
+    text-align: center;
+}
+
+#bloc_comments{
+    background-color: #343a40;
+    width: 80%;
+    margin: auto;
+    padding: 1% 0%;
+    margin-bottom: 5%;
+    border-radius: 5px;   
+}
+
+#bloc_comments p{
+    margin-left: 3%;
+    color: white;
+}
+
+#bloc_new_comment{
+    position: relative;
+}
+
+
+#bloc_new_comment form{
+    width: 90%;
+    margin: auto;
+    background-color: #ffc107;
+    margin-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 20%;
+    border-radius: 5px; 
+}
+
+#bloc_new_comment form textarea{
+    width: 60%;
+    margin: 2% 0;
+    margin-left: 15%;
+    border-radius: 5px; 
+}
+
+#bloc_new_comment form input{
+    width: 60%;
+    height: 25px;
+    margin: 2% 0;
+    margin-left: 21.5%;
+    border-radius: 5px; 
+    border-color: unset;
+}
+
+#bloc_new_comment h3{
+    width: 70%;
+    background-color: #343a40;
+    margin: auto;
+    padding: 1% 20%;
+    position: absolute;
+    left: 15%;
+    bottom: 93%;
+    border-radius: 5px; 
+}
+
+#bloc_new_comment form label{
+    margin-left: 3%;
+}
+
+#bloc_new_comment form #submit{
+    margin-left: 70%;
+    margin-top: 3%;
+    padding: 4px;
+    background-color: #343a40;
+    color: white;
+}
+
+#bloc_new_comment form #reset{
+    background-color: #6c757d;
+    padding: 4px;
+    margin-left: 2px;
+    color: white;
+}
+
+
+
+/********************* page gestion des articles ********************/
+#gestion{
+    display: flex;
+    justify-content: space-between;
+}
+#gestion .list-group{
+    width: 10.7%;
+}
+
+#gestion_articles{
+    width: 73%;
+}
+
+#articles{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#gestion_articles .jumbotron, #gestion2{
+    width: 90%;
+}
+
+#gestion2 button{
+    padding:2px;
+    color: white;
+    background-color: #007bff;
+    margin: 3% 0;
+}
+
+#new-article{
+    color: white;
+    text-decoration: none;
+}
+
+label{
+    font-weight: bold;
+}
+
+/********************* page edition des articles ********************/
+
+#edit{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#edit label, #edit select{
+    margin-right: 3%;
+}
+
+#edit button{
+    background-color: #007bff;
+    padding: 5px;
+    color: white;
+}
+
+#delete i{
+    color: teal;
+}

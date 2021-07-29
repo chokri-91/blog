@@ -1,0 +1,58 @@
+<section id="details">
+
+    <div id="article_show">
+
+        <header>
+            <div>
+                <h3><?= htmlspecialchars($article['Title']) ?></h3>
+                <hr>
+                <p>Dans la catégoie : <strong> <?= htmlspecialchars($article['Name']) ?> </strong></p>
+                <p>Rédigé par <strong><?= htmlspecialchars($article['LastName'] . ' '. $article['FirstName'])?></strong> le <span><?= $article['date']?> </span></p>
+            </div>
+        </header>
+        <main>
+            <p><?= nl2br(htmlspecialchars($article['Contents']))?></p>
+        </main>
+    </div>
+
+    <div id="comments">
+
+        
+            <br><br>
+            <h3> Liste de commentaires (<?= count($commentaires) ?>)</h3> 
+            <?php foreach ($commentaires as $commentaire):?>
+
+                          
+                <div id="bloc_comments">
+                    <p style="color:white"><i class="fas fa-comment"></i> Rédigé par <strong><?= $commentaire['NickName'] ?></strong> </p>
+                    <p> <?= nl2br(htmlspecialchars($commentaire['Contents'])) ?> </p>
+
+                </div>
+
+            <?php endforeach; ?>
+        
+        
+        <div id="bloc_new_comment">
+       
+            <h3> Nouveau commentaire</h3>
+
+            <form action="add_comment.php" method="POST">
+
+                <input type="hidden" name="post_id" value="<?= $_GET['id'] ?>">
+
+                <label>Pseudo </label>
+                <input type="text" name="pseudo"><br>
+
+                <label>Commentaire</label>
+                <textarea cols="12" rows="4" name="comment"></textarea><br>
+                
+                <button id="submit" type="submit"> Ajouter</button>
+                <button id="reset" type="reset"> Annuler</button>
+
+            </form>
+
+        </div>
+        
+
+    </div>
+</section>

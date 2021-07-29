@@ -1,0 +1,66 @@
+<main class="d-flex flex-column">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">Administration</li>
+        <li class="breadcrumb-item active" aria-current="page">Gestion des articles</li>
+    </ol>
+  </nav>
+ 
+    <section id="gestion">
+        <?php include 'admin_menu.php'?>
+        <div id="gestion_articles">
+
+            <div class="jumbotron" id="articles">
+                <h1 class="display-4">Rédiger un article</h1>
+                
+                <hr class="my-4">
+
+                <button><i class="fas fa-edit"></i> SQL INSERT INTO</button>
+                <button><i class="fas fa-edit"></i> SQL UPDATE</button>
+                <button><i class="fas fa-edit"></i> SQL DELETE</button>
+                <button><i class="fas fa-edit"></i> Nombres de lignes affectées par une requete</button>
+
+            </div>
+
+            <div id="gestion2">
+
+                <button> <i class="fas fa-plus"></i> <a id="new-article" href="admin_post_add.php"> Créer un article </a></button>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Création</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Auteur</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                    </thead>
+                    
+                    <tbody id='posts'>
+                        <?php foreach($articles as $article): ?>
+                        <tr>
+                            
+                            <td><?= $article['Id'] ?></td>
+                            <td><?= $article['date'] ?></td>
+                            <td><?= $article['Title'] ?></td>
+                            <td><?= $article['FirstName'] ?> <?= $article['LastName'] ?></td>
+                            <td><?= $article['Name'] ?></td>
+                            <td><a href="admin_post_edit.php?id=<?=$article['Id']?>"><i class="fas fa-pen-nib"></i></a></td>
+
+                            <td><a href="admin_post_delete.php?id=<?=$article['Id']?>"><i class="fas fa-trash-alt"></i></a>
+                            <button class="delete" data-index="<?=$article['Id']?>" ><i class="fas fa-trash-alt"></i> </button> </td>
+
+                        </tr>
+                        
+                        
+                        <?php endforeach; ?>
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
